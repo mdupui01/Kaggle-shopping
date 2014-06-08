@@ -1,0 +1,17 @@
+{
+    "contents" : "library(\"randomForest\")\n\naggregated = read.csv(\"../data/aggregated_by_customer_train_cat.csv\")\ntraining_history = read.csv(\"../data/offersAndTrainJoined.csv\")\n\n# Joining the offers+train data and the transaction aggregation data\ntotal_joined_train = merge(aggregated, training_history, by = \"id\")\n\n# Remove the extra offer column\ntotal_joined_train$offer.1 <- NULL\n\n# Set certain variables as factors\ntotal_joined_train$id <- factor(total_joined_train$id)\ntotal_joined_train$chain <- factor(total_joined_train$chain)\ntotal_joined_train$offer <- factor(total_joined_train$offer)\ntotal_joined_train$market <- factor(total_joined_train$market)\ntotal_joined_train$category <- factor(total_joined_train$category)\ntotal_joined_train$quantity <- factor(total_joined_train$quantity)\ntotal_joined_train$company <- factor(total_joined_train$company)\ntotal_joined_train$brand <- factor(total_joined_train$brand)\n\n# Train the random forest\ndrops <- c(\"repeattrips\", \"id\", \"offerdate\", \"market\", \"chain\")\nvariables <- total_joined_train[,!(colnames(total_joined_train) %in% drops)]\nrf <- randomForest(repeater ~ ., data = variables)\n",
+    "created" : 1402171150120.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3726190563",
+    "id" : "AD681EA0",
+    "lastKnownWriteTime" : 1402173537,
+    "path" : "~/src/shopping/src/random_forest.r",
+    "project_path" : "random_forest.r",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

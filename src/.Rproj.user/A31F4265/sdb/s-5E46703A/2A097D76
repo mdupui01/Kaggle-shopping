@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1402180893087.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "2A097D76",
+    "lastKnownWriteTime" : 8070450532247928832,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "variables",
+        "contentUrl" : "content?title=variables&file=67603ce115d2494792093e3eadbbc625.htm",
+        "displayedObservations" : 1000,
+        "displayedVariables" : 14,
+        "totalObservations" : 159704,
+        "variables" : 14
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
